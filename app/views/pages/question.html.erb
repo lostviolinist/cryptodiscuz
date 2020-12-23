@@ -1,0 +1,12 @@
+<%= render 'layouts/navbar' %>
+
+<% if current_user %>
+    Post a question
+<% else %>
+    <div class="container text-center mt-5">
+        Please sign up or log in to post a question! <br>
+        <%= link_to 'Sign up', new_user_registration_path, :class => "mt-3 mr-3 btn btn-outline-secondary" %>
+    <%= link_to 'Sign in', new_user_session_path, :class => "mt-3 btn btn-outline-secondary" %>
+    </div>
+    
+<% end %>

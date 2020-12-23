@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-light">
+    <%= link_to "CryptoDiscuz", root_path, :class => "navbar-brand" %>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <%= link_to 'Terms', pages_terms_path, :class => "navbar-text mr-2" %>
+            <% if current_user %>
+                <%= current_user.email %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "ml-3 btn btn-outline-secondary" %>
+            <% else %>
+                <%= link_to 'Sign up', new_user_registration_path, :class => "btn btn-outline-secondary" %>
+                <%= link_to 'Sign in', new_user_session_path, :class => "btn btn-outline-secondary" %>
+            <% end %>
+        </li>
+    </ul>
+</nav>

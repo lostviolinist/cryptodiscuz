@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get  'pages/terms'
   get  'pages/question'
   root to: 'pages#home'
